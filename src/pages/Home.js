@@ -11,8 +11,12 @@ const Home = () => {
 
     const [data, setData] = useState([]);
     const [curDate, setCurDate] = useState(new Date());
-    const headText = `${curDate.getFullYear()}year ${curDate.getMonth() + 1} month`;
-   
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    const headText = `${monthNames[curDate.getMonth()]} ${curDate.getFullYear()}`
+
+
     useEffect(() => {
         const titleElement = document.getElementsByTagName('title')[0];
         titleElement.innerHTML = `Emotion Diary`;
